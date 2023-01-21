@@ -1,0 +1,421 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ammy-inventory",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Prod"
+    }
+  ],
+  "paths": {
+    "/products": {
+      "get": {
+        "summary": "List Products",
+        "x-apifox-folder": "Prod",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Prod"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Product"
+                      }
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "products"
+                  ],
+                  "required": [
+                    "products"
+                  ],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2173056/apis/api-57610072-run"
+      },
+      "post": {
+        "summary": "Add a new Product",
+        "x-apifox-folder": "Prod",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Prod"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-apifox-refs": {
+                  "01GP9FPYND6X4P8WKXAM0BHFR6": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                },
+                "x-apifox-orders": [
+                  "01GP9FPYND6X4P8WKXAM0BHFR6"
+                ],
+                "properties": {
+                  "img": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "Low",
+                      "High"
+                    ],
+                    "x-apifox": {
+                      "enumDescriptions": {
+                        "Low": "",
+                        "High": ""
+                      }
+                    }
+                  },
+                  "level": {
+                    "type": "integer"
+                  },
+                  "value": {
+                    "type": "integer"
+                  },
+                  "remark": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                },
+                "required": [
+                  "img",
+                  "name",
+                  "status",
+                  "level",
+                  "value",
+                  "remark"
+                ],
+                "x-apifox-ignore-properties": [
+                  "img",
+                  "name",
+                  "status",
+                  "level",
+                  "value",
+                  "remark"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "id"
+                  ],
+                  "required": [
+                    "id"
+                  ],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2173056/apis/api-57610093-run"
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "List Product Records",
+        "x-apifox-folder": "Prod",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Prod"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "records": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Record"
+                      }
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "records"
+                  ],
+                  "required": [
+                    "records"
+                  ],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2173056/apis/api-57610073-run"
+      },
+      "post": {
+        "summary": "Add a new record",
+        "x-apifox-folder": "Prod",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Prod"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-apifox-refs": {
+                  "01GP9FS12BDA1NGP77GK31JS10": {
+                    "$ref": "#/components/schemas/Record"
+                  }
+                },
+                "x-apifox-orders": [
+                  "01GP9FS12BDA1NGP77GK31JS10"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      1,
+                      2
+                    ],
+                    "x-apifox": {
+                      "enumDescriptions": {
+                        "0": "Order",
+                        "1": "Sale",
+                        "2": "change"
+                      }
+                    }
+                  },
+                  "date": {
+                    "type": "integer"
+                  },
+                  "count": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "type",
+                  "date",
+                  "count",
+                  "price"
+                ],
+                "x-apifox-ignore-properties": [
+                  "type",
+                  "date",
+                  "count",
+                  "price"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "id"
+                  ],
+                  "required": [
+                    "id"
+                  ],
+                  "x-apifox-ignore-properties": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2173056/apis/api-57610096-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Record": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "x-apifox": {
+              "enumDescriptions": {
+                "0": "Order",
+                "1": "Sale",
+                "2": "change"
+              }
+            }
+          },
+          "date": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          }
+        },
+        "x-apifox-orders": [
+          "id",
+          "type",
+          "date",
+          "count",
+          "price"
+        ],
+        "required": [
+          "id",
+          "type",
+          "date",
+          "count",
+          "price"
+        ],
+        "x-apifox-ignore-properties": [],
+        "x-apifox-folder": ""
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "img": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Low",
+              "High"
+            ],
+            "x-apifox": {
+              "enumDescriptions": {
+                "Low": "",
+                "High": ""
+              }
+            }
+          },
+          "level": {
+            "type": "integer"
+          },
+          "value": {
+            "type": "integer"
+          },
+          "remark": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "x-apifox-orders": [
+          "id",
+          "img",
+          "name",
+          "status",
+          "level",
+          "value",
+          "remark"
+        ],
+        "required": [
+          "id",
+          "img",
+          "name",
+          "remark",
+          "level",
+          "value",
+          "status"
+        ],
+        "description": "2",
+        "x-apifox-ignore-properties": [],
+        "x-apifox-folder": ""
+      }
+    }
+  },
+  "servers": []
+}

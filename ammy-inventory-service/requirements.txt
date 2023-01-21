@@ -1,0 +1,5 @@
+aws-lambda-powertools==2.5.0
+dataclasses-json==0.5.7
+typing-inspect==0.8.0
+typing_extensions==4.4.0
+PyJWT==2.6.0
